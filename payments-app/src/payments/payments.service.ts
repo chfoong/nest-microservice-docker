@@ -8,7 +8,7 @@ export class PaymentsService {
         if (Math.random() >= 0.3) {
             return;
         } else {
-            throw new BadRequestException('Payment Request rejected');
+            throw new BadRequestException('Payment Request Rejected');
         }
     }
 }

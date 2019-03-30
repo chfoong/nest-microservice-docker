@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 import { CreatePaymentDto } from './dto/create-payment-dto';
 import { ApiResponse, ApiBadRequestResponse, ApiCreatedResponse, ApiBearerAuth, ApiUseTags } from '@nestjs/swagger';
@@ -13,6 +13,7 @@ export class PaymentsController {
 
     @Post('/')
     @UseGuards(AuthGuard('bearer'))
+    @UsePipes(new ValidationPipe())
     @ApiCreatedResponse({})
     @ApiBadRequestResponse({})
     create(@Body() createPaymentDto: CreatePaymentDto) {
