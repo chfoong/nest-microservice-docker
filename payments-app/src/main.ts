@@ -10,6 +10,7 @@ async function bootstrap() {
     .setDescription('Simple Payments App')
     .setVersion('1.0')
     .addTag('payments')
+    .addBearerAuth('Authorization', 'header')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
