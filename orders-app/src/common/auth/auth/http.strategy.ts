@@ -11,10 +11,10 @@ export class HttpStrategy extends PassportStrategy(Strategy) {
     }
 
     validate(token: string) {
-        const result = this.authService.validateToken(token);
-        if (!result) {
+        const user = this.authService.validateToken(token);
+        if (!user) {
             throw new UnauthorizedException();
         }
-        return result;
+        return user;
     }
 }

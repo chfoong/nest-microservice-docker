@@ -15,6 +15,6 @@ export class MapperService {
     }
 
     private static configure(config: AutoMapperJs.IConfiguration): void {
-        config.createMap('Order', 'OrderVm');
+        config.createMap('Order', 'OrderVm').forSourceMember('customer', opts => opts.ignore());
     }
 }

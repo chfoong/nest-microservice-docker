@@ -4,8 +4,8 @@ import { ModelType } from 'typegoose';
 import { BaseService } from 'src/common/base/base.service';
 import { Order, OrderModel } from './models/order.model';
 import { MapperService } from 'src/common/mapper/mapper/mapper.service';
-import { OrderParams } from './models/view-models/order-params.model';
-import { Item } from './models/item.model';
+import { Item } from '../items/models/item.model';
+import { User } from 'src/users/models/user.model';
 
 @Injectable()
 export class OrdersService extends BaseService<Order> {
@@ -18,9 +18,10 @@ export class OrdersService extends BaseService<Order> {
         this._mapper = _mapperService.mapper;
     }
 
-    async createOrder(user: string, items: Item[]): Promise<Order> {
+    async createOrder(user: User, items: Item[]): Promise<Order> {
         const newOrder = new OrderModel();
 
+        newOrder.customer = user;
         newOrder.items = items;
         newOrder.total = items.reduce((total, item) => {
             return total + item.price;

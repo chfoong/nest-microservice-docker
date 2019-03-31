@@ -1,21 +1,12 @@
-import { Injectable } from '@nestjs/common';
-import { ConfigurationService } from 'src/common/configuration/configuration/configuration.service';
-import { Configuration } from 'src/common/configuration/configuration/configuration.enum';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class AuthService {
-    private readonly bearer: string;
 
+    constructor(private readonly _usersService: UsersService) {}
 
-    constructor(private readonly configurationService: ConfigurationService) {
-        this.bearer = configurationService.get(Configuration.TRUSTED_CLIENT_BEARER);
-    }
-
-    validateToken(token: string): boolean {
-        if (token === this.bearer) {
-            return true;
-        } else {
-            return false;
-        }
+    async validateToken(token: string) {
+        return this._usersService.findOne({ permanent_stub_bearer: token });
     }
 }

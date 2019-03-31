@@ -5,14 +5,19 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigurationService } from './common/configuration/configuration/configuration.service';
 import { Configuration } from './common/configuration/configuration/configuration.enum';
 import { ItemsModule } from './items/items.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './common/auth/auth/auth.module';
+import { AuthService } from './common/auth/auth/auth.service';
+import { UsersService } from './users/users.service';
 
 @Module({
-  imports: [CommonModule, MongooseModule.forRootAsync({
+  imports: [CommonModule, AuthModule, MongooseModule.forRootAsync({
     imports: [CommonModule],
     useFactory: async (_configService: ConfigurationService) => ({
       uri: _configService.get(Configuration.MONGO_URI),
     }),
     inject: [ConfigurationService],
-  }), OrdersModule, ItemsModule],
+  }), OrdersModule, ItemsModule, UsersModule],
+  providers: [AuthService, UsersService]
 })
 export class AppModule {}

@@ -3,16 +3,16 @@ import { InjectModel } from '@nestjs/mongoose';
 import { ModelType } from 'typegoose';
 import { BaseService } from 'src/common/base/base.service';
 import { MapperService } from 'src/common/mapper/mapper/mapper.service';
-import { Item } from 'src/items/models/item.model';
+import { User } from 'src/users/models/user.model';
 
 @Injectable()
-export class ItemsService extends BaseService<Item> {
+export class UsersService extends BaseService<User> {
     constructor(
-        @InjectModel(Item.modelName) private readonly _itemModel: ModelType<Item>,
+        @InjectModel(User.modelName) private readonly _userModel: ModelType<User>,
         private readonly _mapperService: MapperService,
     ) {
         super();
-        this._model = _itemModel;
+        this._model = _userModel;
         this._mapper = _mapperService.mapper;
     }
 }

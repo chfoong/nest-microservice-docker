@@ -1,12 +1,12 @@
 import { BaseModel, schemaOptions } from 'src/common/base/base.model';
 import { InstanceType, ModelType, prop } from 'typegoose';
-import { Customer } from './customer.model';
+import { User } from '../../users/models/user.model';
 import { OrderStatus } from './order-status.enum';
-import { Item } from './item.model';
+import { Item } from '../../items/models/item.model';
 
 export class Order extends BaseModel<Order> {
     @prop()
-    customer: Customer;
+    customer: User;
 
     @prop()
     items: Item[];

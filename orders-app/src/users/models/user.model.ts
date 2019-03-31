@@ -1,8 +1,8 @@
 import { InstanceType, ModelType, prop } from 'typegoose';
 import { BaseModel, schemaOptions } from 'src/common/base/base.model';
 
-export class Customer extends BaseModel<Customer> {
-    @prop({ required: [true, 'Customer Name is required'] })
+export class User extends BaseModel<User> {
+    @prop({ required: [true, 'User Name is required'] })
     name: string;
 
     @prop()
@@ -20,15 +20,17 @@ export class Customer extends BaseModel<Customer> {
     @prop()
     ccCvc: string;
 
-    static get model(): ModelType<Customer> {
-        return new Customer().getModelForClass(Customer, { schemaOptions });
+    static get model(): ModelType<User> {
+        return new User().getModelForClass(User, { schemaOptions });
     }
 
     static get modelName(): string {
         return this.model.modelName;
     }
 
-    static createModel(): InstanceType<Customer> {
+    static createModel(): InstanceType<User> {
         return new this.model();
     }
 }
+
+export const UserModel = new User().getModelForClass(User, { schemaOptions })
