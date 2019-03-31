@@ -35,6 +35,8 @@
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
     "reflect-metadata": "^0.1.12",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3",
     "swagger-ui-express": "^4.0.2",

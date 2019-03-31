@@ -1,1 +1,1 @@
-{ "MONGO_URI": "mongodb://localhost:27017/nest-microservice" }
+{ "MONGO_URI": "mongodb://localhost:27017/nest-microservice", "PAYMENT_ENDPOINT": "http://localhost:4000/payments", "PAYMENT_BEARER": "SGVsbG9Xb3JsZDpTZXRlbDIwMTk=" }
