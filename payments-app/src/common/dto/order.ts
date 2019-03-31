@@ -8,7 +8,7 @@ export class Order {
     @ApiModelProperty()
     @IsNotEmpty()
     @IsString()
-    readonly id: string;
+    readonly _id: string;
 
     @ApiModelProperty()
     @ValidateNested()
