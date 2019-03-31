@@ -17,7 +17,7 @@
                 "-r",
                 "tsconfig-paths/register"
             ],
-            "cwd": "${workspaceRoot}/payments-app",
+            "cwd": "${workspaceRoot}/orders-app",
             "protocol": "inspector",
             "internalConsoleOptions": "openOnSessionStart",
             "env": {
