@@ -1,0 +1,29 @@
+[{
+	"_id": {
+		"$oid": "5ca0b9551ae0e77457e6a4bc"
+	},
+	"name": "The Mythical Man-Month",
+	"price": 19.98
+},
+{
+	"_id": {
+		"$oid": "5ca0beba1ae0e77457e6a656"
+	},
+	"name": "The Cathedral \u0026 the Bazaar",
+	"price": 10.99
+},
+{
+	"_id": {
+		"$oid": "5ca0bec61ae0e77457e6a65b"
+	},
+	"name": "Peopleware: Productive Projects and Teams",
+	"price": 27.16
+},
+{
+	"_id": {
+		"$oid": "5ca0bed41ae0e77457e6a668"
+	},
+	"name": "Refactoring: Improving the Design of Existing Code",
+	"price": 38.39
+}]
+

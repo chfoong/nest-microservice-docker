@@ -1,0 +1,23 @@
+[{
+	"_id": {
+		"$oid": "5ca0c2e91ae0e77457e6a789"
+	},
+	"name": "Alphha",
+	"permanent_stub_bearer": "0b79bab50daca910b000d4f1a2b675d604257e42",
+	"cc_number": "378282246310005",
+	"cc_name": "Real Alphha Name",
+	"cc_expiry": "12/22",
+	"cc_cvc": "1234"
+},
+{
+	"_id": {
+		"$oid": "5ca0c3031ae0e77457e6a794"
+	},
+	"name": "Betta",
+	"permanent_stub_bearer": "oab3thieWohyai4f1a21230eoxibaequ0Owae9oh",
+	"cc_number": "371449635398431",
+	"cc_name": "Real Betta Name",
+	"cc_expiry": "12/22",
+	"cc_cvc": "1234"
+}]
+

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  payments:
+    build: './payments-app'
+    ports:
+      - "4000:4000"
+
+  orders:
+    build: './orders-app'
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb/nest-microservice
+      - PAYMENT_ENDPOINT=http://payments:4000/payments
+  
+  mongodb:
+    image: mongo
+    ports:
+      - "27000:27017"
+
+  mongodb_seed:
+    build: './mongo-seed'
+    links:
+      - mongodb
